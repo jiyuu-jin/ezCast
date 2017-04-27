@@ -1,8 +1,6 @@
 
 function cast() {
-
-			  
-			
+	
 }
 
 
@@ -20,7 +18,9 @@ function main(){
 
 			  var playSelectedFile = function (event) {
 			    var file = this.files[0]
+			    var name = file.name
 			    var type = file.type
+			    document.getElementById('title').innerHTML = name;
 			    var videoNode = document.querySelector('video')
 			    var canPlay = videoNode.canPlayType(type)
 			    if (canPlay === '') canPlay = 'no'
