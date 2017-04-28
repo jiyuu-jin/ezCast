@@ -41,16 +41,19 @@ function main(){
 }
 
 
+
 document.body.onkeyup = function(e){
 	var videoPlayer = document.getElementById('player');
     if(e.keyCode == 32){
         if (videoPlayer.paused == false) {
             videoPlayer.pause();
+            document.getElementById("title").style.display = 'block';
         } else {
             videoPlayer.play();
+            document.getElementById("title").style.display = 'none';
         }
     }
-}
+};
 
 window.onload = function(){
 		main();

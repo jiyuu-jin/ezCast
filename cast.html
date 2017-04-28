@@ -17,15 +17,43 @@
 			    background-color: red;
 			    color: white;
 			}
+
+			#video-contain{
+				position: relative;
+			}
+
+			#video-overlay{
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: calc(100% - 52px);
+				z-index: 2147483647;
+			}
+
+			#title{
+				background-color: rgba(255, 255, 255, 0.47);
+				display: none;
+				font-size: 35px;
+			}
+
+			#player{
+				z-index: 1;
+			}
+
 		</style>
 	</head>
 
 	<body>
 	<script src="main.js"></script>
-			<h1 id="title">Chromecast Testing</h1>
-			<div id="message"></div>
-			<input type="file" accept="video/*"/>
+		<div id="message"></div>
+		<input type="file" accept="video/*"/>
+		<div id="video-contain">
 			<video id="player" controls autoplay></video>
+			<div id="video-overlay">
+				<h1 id="title">Chromecast Testing</h1>
+			</div>
+		</div>
+			
 	</body>
 
 </html>
