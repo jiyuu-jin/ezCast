@@ -11,15 +11,15 @@ function main(){
 			  var URL = window.URL || window.webkitURL;
 
 			  var displayMessage = function (message, isError) {
-			    var element = document.querySelector('#message')
+			    var element = document.querySelector('#message');
 			    element.innerHTML = message
 			    element.className = isError ? 'error' : 'info'
-			  }
+			  };
 
 			  var playSelectedFile = function (event) {
-			    var file = this.files[0]
-			    var name = file.name
-			    var type = file.type
+			    var file = this.files[0];
+			    var name = file.name;
+			    var type = file.type;
 			    document.getElementById('title').innerHTML = name;
 			    var videoNode = document.querySelector('video')
 			    var canPlay = videoNode.canPlayType(type)
@@ -32,9 +32,12 @@ function main(){
 			      return
 			    }
 
-			  var fileURL = URL.createObjectURL(file)
-			    videoNode.src = fileURL
-			  }
+			  var fileURL = URL.createObjectURL(file);
+			    videoNode.src = fileURL;
+				  console.log(fileURL);
+			  };
+
+
 
 			  var inputNode = document.querySelector('input')
 			  inputNode.addEventListener('change', playSelectedFile, false);
